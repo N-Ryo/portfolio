@@ -1,6 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+class Frame extends React.Component {
+  render() {
+    return (
+      <div className="portfolio">
+        <div className="main">
+          portfolio
+        </div>
+        <div className="menu">
+          <div></div>
+          <ol>
+            <li>about</li>
+            <li>skills</li>
+            <li>works</li>
+          </ol>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Frame />,
+  document.getElementById('main')
+);
+
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
