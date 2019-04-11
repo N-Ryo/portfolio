@@ -7,6 +7,33 @@ ol, ul {
   padding-left: 30px;
 }
 
+h1{
+  text-align: center;
+}
+
+.main{
+  color: #FFF;
+  width: 80%;
+  height: 90%;
+}
+
+.bgImage{
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.main, .bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .board-row:after {
   clear: both;
   content: "";

@@ -1,22 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import topImage from './images/top-image.jpg'
 
 class Frame extends React.Component {
   render() {
+    const style = {backgroundImage:`url(${topImage})`}
     return (
       <div className="portfolio">
         <div className="main">
-          portfolio
+          <h1>portfolio</h1>
+          <div className="menu">
+            <div></div>
+            <ol>
+              <li>about</li>
+              <li>skills</li>
+              <li>works</li>
+            </ol>
+          </div>
         </div>
-        <div className="menu">
-          <div></div>
-          <ol>
-            <li>about</li>
-            <li>skills</li>
-            <li>works</li>
-          </ol>
-        </div>
+        <div className="bgImage" style={style}></div>
       </div>
     );
   }
