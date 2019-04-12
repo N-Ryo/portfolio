@@ -1,6 +1,23 @@
+/*
+  フォント名は Win と Mac で少しだけ異なる。
+  Windows: "游ゴシック", "Yu Gothic"
+  Mac: "游ゴシック体", "YuGothic"
+*/
+@font-face {
+  font-family: "YuGothic M";
+  src: local("Yu Gothic Medium"),
+       local("Yu Gothic");
+  font-weight: 500;
+       /*
+         Chrome 58.0.3029.110 (64-bit) では
+         "Yu Gothic Medium" を認識しないバグあるため
+         "Yu Gothic" と font-weight も併せて指定。
+       */
+}
+
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  font-family: Mon Sans, "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
+  font-size: 18px;
 }
 
 ol, ul {
@@ -9,12 +26,22 @@ ol, ul {
 
 h1{
   text-align: center;
+  font-size: 46px;
+  margin: 0;
+}
+
+a{
+  color: orange;
 }
 
 .main{
   color: #FFF;
   width: 80%;
   height: 90%;
+}
+
+.gameTitle{
+  color: #FFF;
 }
 
 .bgImage{
@@ -32,6 +59,12 @@ h1{
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+.tic-tac-toe{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
 .board-row:after {
@@ -74,4 +107,5 @@ h1{
 
 .game-info {
   margin-left: 20px;
+  color: #FFF;
 }

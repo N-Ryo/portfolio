@@ -10,6 +10,11 @@ class Frame extends React.Component {
       <div className="portfolio">
         <div className="main">
           <h1>portfolio</h1>
+          <div className="profile">
+            <p>Ryo Nishimura</p>
+            <p>Tokyo</p>
+            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <a href="mailto:ryo.joy.joy@gmail.com">here</a>.</p>
+          </div>
           <div className="menu">
             <div></div>
             <ol>
@@ -114,8 +119,6 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
-    } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
     const moves = history.map((step, move) => {
       const desc = move ?
@@ -128,16 +131,19 @@ class Game extends React.Component {
       );
     });
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+      <div>
+        <span className="gameTitle">Game: Tic Toc Toe</span>
+        <div className="game">
+          <div className="game-board">
+            <Board
+              squares={current.squares}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
