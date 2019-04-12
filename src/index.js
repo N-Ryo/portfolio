@@ -1,7 +1,14 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import topImage from './images/top-image.jpg'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel)
 
 class Frame extends React.Component {
   render() {
@@ -13,7 +20,7 @@ class Frame extends React.Component {
           <div className="profile">
             <p>Ryo Nishimura</p>
             <p>Tokyo</p>
-            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <a href="mailto:ryo.joy.joy@gmail.com">here</a>.</p>
+            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <a href={"mailto:ryo.joy.joy@gmail.com"}>here</a>.</p>
           </div>
           <div className="menu">
             <div></div>

@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="/icon-192x192.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -17,5 +18,40 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="main"></div>
     <div id="root" class="tic-tac-toe"></div>
+    <a href="mailto:ryo.joy.joy@gmail.com?subject=From portfolio">here</a>
+    
+    <div class="form-modal">
+      <div class="form">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeOEZqtGLlpgk5gzwNLUPZ0U2hg2nMoTugjC4qtQcs2cucI_A/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true">
+          <div class="cp_iptxt">
+            <input  class="ef" id="name" type="text" name="entry.106339191"required>
+            <label for="name">Name</label>
+            <span class="focus_line"><i></i></span>
+          </div>
+
+          <div class="cp_iptxt">
+            <input class="ef" id="email" type="text" name="entry.1647594" required>
+            <label for="email">E-mail</label>
+            <span class="focus_line"><i></i></span>
+          </div>
+
+          <div class="cp_iptxt">
+            <input class="ef" id="kind" type="text" name="entry.520156615" required>
+            <label for="kind">Title</label>
+            <span class="focus_line"><i></i></span>
+          </div>
+          <div class="cp_iptxt">
+            <input class="ef" id="description" type="text" name="entry.218869935" required>
+            <label for="description">Body</label>
+            <span class="focus_line"><i></i></span>
+          </div>
+          <div class="cp_iptxt">
+            <button type="submit" name="button" value=""><i class="fas fa-envelope"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='http://localhost:3000'"></iframe>
   </body>
 </html>
