@@ -30,8 +30,21 @@ h1{
   margin: 0;
 }
 
+h2{
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
 a{
   color: orange;
+}
+
+form{
+  width: 100%;
+  height: calc(100% - 40px);
+  position: relative;
+  margin-top: 40px;
 }
 
 .main{
@@ -125,13 +138,18 @@ a{
 }
 
 
-.cp_iptxt {
+.cp_iptxt, .cp_body {
 	position: relative;
   width: 90%;
   height: 40px;
 	margin: 40px 5%;
 }
-.cp_iptxt input[type='text'] {
+
+.cp_body, .cp_body textarea{
+  height: 120px !important;
+}
+
+.cp_iptxt input[type='text'], .cp_body textarea {
 	font: 15px/24px sans-serif;
 	box-sizing: border-box;
 	width: 100%;
@@ -139,13 +157,13 @@ a{
 	padding-left: 6em;
 }
 
-.cp_iptxt input[type='text']:valid {
+.cp_iptxt input[type='text']:valid, .cp_body textarea:valid {
   background-color: rgb(232, 240, 254) !important;
-    background-image: none !important;
-    color: rgb(0, 0, 0) !important;
+  background-image: none !important;
+  color: rgb(0, 0, 0) !important;
 }
 
-.cp_iptxt input[type='text']:focus {
+.cp_iptxt input[type='text']:focus, .cp_body textarea:focus {
 	outline: none;
 }
 .ef {
@@ -202,8 +220,7 @@ a{
 }
 .ef ~ label {
 	position: absolute;
-	z-index: -1;
-	top: 8px;
+	top: 6.5px;
 	left: 14px;
 	width: 100%;
 	transition: 0.3s;
@@ -222,7 +239,7 @@ a{
 .cp_iptxt i {
   color: #900A0A;
   font-size: 25px;
-  transition: .3s;
+  transition: 2s;
 }
 
 .cp_iptxt button{
@@ -230,7 +247,39 @@ a{
   right: calc(50% - 20px);
 }
 
+.ef_body{
+  height: 120px;
+}
+
+.cp_btn{
+  position: absolute;
+  bottom: 0;
+}
+
+button{
+  border-radius: 50%;
+  border: #900A0A 2px solid;
+  transition: 2s;
+}
+
+button:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
 button:hover i {
   -webkit-transform: rotateX(360deg);
   transform: rotateX(360deg);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center; /*左右中央揃え*/
+  align-items: center;     /*上下中央揃え*/
+  width: 100%;
+  height: 100%;
+}
+
+.form-alert{
+  display: none;
 }
