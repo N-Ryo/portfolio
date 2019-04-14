@@ -30,4 +30,18 @@ $(document).ready(function () {
         });
         event.preventDefault();
     });
+
+    var $form_modal = $('.form-modal');
+    var $form = $('.appear-form');
+    var $mail_link = $('.mail-link');
+    var $close_form = $('.form-modal');
+
+    $mail_link.on('click', function(){
+        $form_modal.toggleClass('modal-active');
+        $form.toggleClass('active');
+    });
+    $close_form.on('click', function(){
+        $form_modal.toggleClass('modal-active');
+        $form.toggleClass('active');
+    });
 });

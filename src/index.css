@@ -15,6 +15,12 @@
        */
 }
 
+html{
+  height: 100%;
+  width: 100vh;
+  overflow: hidden;
+}
+
 body {
   font-family: Mon Sans, "游ゴシック体", YuGothic, "YuGothic M", sans-serif;
   font-size: 18px;
@@ -47,6 +53,19 @@ form{
   margin-top: 40px;
 }
 
+.appear-form{
+  opacity: 0;
+}
+
+.appear-form.active{
+  animation: appearance 1000ms ease 800ms forwards;
+}
+
+@keyframes appearance {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .main{
   color: #FFF;
   width: 80%;
@@ -65,11 +84,44 @@ form{
   background-position:center;
 }
 
+.mail-link{
+  color: orange;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .form-modal{
-  width: 100%;
-  height: 100%;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+	-webkit-border-radius: 100%;
   background-color: rgba(30, 30, 30, .6);
-  z-index: 999;
+  z-index: -2;
+}
+
+.modal-active{
+  z-index: 2;
+  animation: open-form 2000ms cubic-bezier(0, 0.1, 0.22, 1) 100ms 1 forwards;
+}
+
+@keyframes open-form {
+  0% {
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    border: 10em #900A0A solid;
+    z-index: 2;
+  }
+  20% {
+    border: 10em #900A0A double;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0 #900A0A double;
+    z-index: 999;
+  }
 }
 
 .form{
@@ -78,6 +130,7 @@ form{
   z-index: 999;
   background-color: #FFF;
 }
+
 
 .main, .bgImage, .form, .form-modal, .cp_iptxt button{
   position: absolute;
@@ -263,13 +316,13 @@ button{
 }
 
 button:hover {
-  -webkit-transform: rotateY(360deg);
-  transform: rotateY(360deg);
+  -webkit-transform: rotateY(720deg);
+  transform: rotateY(720deg);
 }
 
 button:hover i {
-  -webkit-transform: rotateX(360deg);
-  transform: rotateX(360deg);
+  -webkit-transform: rotateX(720deg);
+  transform: rotateX(720deg);
 }
 
 .wrapper {

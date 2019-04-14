@@ -20,7 +20,7 @@ class Frame extends React.Component {
           <div className="profile">
             <p>Ryo Nishimura</p>
             <p>Tokyo</p>
-            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <a href={"mailto:ryo.joy.joy@gmail.com"}>here</a>.</p>
+            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <span className="mail-link">here</span>.</p>
           </div>
           <div className="menu">
             <div></div>
