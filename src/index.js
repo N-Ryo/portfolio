@@ -3,24 +3,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import topImage from './images/top-image.jpg'
+import myPicture from './images/my-pic.jpg'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faStroopwafel)
+library.add(fab)
 
 class Frame extends React.Component {
   render() {
-    const style = {backgroundImage:`url(${topImage})`}
+    const style = {backgroundImage:`url(${topImage})`};
     return (
       <div className="portfolio">
         <div className="main">
-          <h1>portfolio</h1>
+          <h1>Portfolio</h1>
           <div className="profile">
-            <p>Ryo Nishimura</p>
-            <p>Tokyo</p>
-            <p>Thank you for visiting my portfolio. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <span className="mail-link">here</span>.</p>
+            <div className="pic-wapper">
+              <img className="my-pic" src={myPicture} alt="Ryo Nishimura"/>
+            </div>
+            <p className="description">Thank you for visiting my portfolio. My name is Ryo Nishimura, and I live in Tokyo. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <span className="mail-link">here</span>.</p>
           </div>
           <div className="menu">
             <div></div>
@@ -42,6 +44,31 @@ ReactDOM.render(
   document.getElementById('main')
 );
 
+class Sns extends React.Component {
+  render() {
+    return (
+      <div className="sns">
+        <div className="twitter">
+          <a href="https://twitter.com/_Ryo_Nishimura">
+            <FontAwesomeIcon icon={['fab', 'twitter']} />
+          </a>
+          <span className="twitter_id">@_Ryo_Nishimura</span>
+        </div>
+        <div className="github">
+          <a href="https://github.com/N-Ryo">
+            <FontAwesomeIcon icon={['fab', 'github']} />
+          </a>
+          <span className="github_id">@N-Ryo</span>
+        </div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Sns />,
+  document.getElementById('sns')
+);
 
 function Square(props) {
   return (
