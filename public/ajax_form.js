@@ -32,16 +32,19 @@ $(document).ready(function () {
     });
 
     var $form_modal = $('.form-modal');
-    var $form = $('.appear-form');
+    var $form = $('.form');
+    var $appear_form = $('.appear-form')
     var $mail_link = $('.mail-link');
     var $close_form = $('.form-modal');
 
     $mail_link.on('click', function(){
         $form_modal.toggleClass('modal-active');
-        $form.toggleClass('active');
+        $appear_form.toggleClass('active');
+        $form.toggleClass('form-active');
     });
     $close_form.on('click', function(){
         $form_modal.toggleClass('modal-active');
-        $form.toggleClass('active');
+        $appear_form.toggleClass('active');
+        $form.toggleClass('form-active');
     });
 });

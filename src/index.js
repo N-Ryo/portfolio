@@ -49,13 +49,13 @@ class Sns extends React.Component {
     return (
       <div className="sns">
         <div className="twitter">
-          <a href="https://twitter.com/_Ryo_Nishimura">
+          <a href="https://twitter.com/_Ryo_Nishimura" target="_blank">
             <FontAwesomeIcon icon={['fab', 'twitter']} />
           </a>
           <span className="twitter_id">@_Ryo_Nishimura</span>
         </div>
         <div className="github">
-          <a href="https://github.com/N-Ryo">
+          <a href="https://github.com/N-Ryo" target="_blank">
             <FontAwesomeIcon icon={['fab', 'github']} />
           </a>
           <span className="github_id">@N-Ryo</span>
