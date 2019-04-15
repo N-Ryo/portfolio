@@ -15,7 +15,7 @@
        */
 }
 
-html{
+html {
   height: 100%;
   width: 100vh;
   overflow: hidden;
@@ -30,44 +30,48 @@ ol, ul {
   padding-left: 30px;
 }
 
-h1{
+h1 {
   text-align: center;
   font-size: 46px;
   margin: 0;
 }
 
-h2{
+h2 {
   text-align: center;
   margin: 0;
   vertical-align: middle;
 }
 
-a{
+a {
   color: orange;
 }
 
-form{
+form {
   width: 100%;
   height: calc(100% - 40px);
   position: relative;
   margin-top: 40px;
 }
 
-.appear-form{
+.menu {
+  list-style: none;
+}
+
+.appear-form {
   opacity: 0;
 }
 
-.appear-form.active{
+.appear-form.active {
   animation: appearance 1000ms ease 800ms forwards;
 }
 
-.main{
+.main {
   color: #FFF;
   width: 80%;
   height: 90%;
 }
 
-.profile{
+.profile {
   background-color: rgba(30, 30, 30, .6);
   padding: 1vw;
 }
@@ -94,7 +98,6 @@ form{
 }
 
 .description {
-  text-align: center;
   margin: 0 auto;
 }
 
@@ -114,7 +117,7 @@ form{
     margin: 18px 18px 18px 0;
   }
 
-  .pic-wapper:before{
+  .pic-wapper:before {
     content:"";
     display: block;
     padding-top: 100%;
@@ -135,18 +138,25 @@ form{
     width: 50%;
   }
 
-  .tic-tac-toe{
+  .tic-tac-toe {
     display: block;
   }
 }
 
-.mail-link{
+
+@media screen and (max-width: 420px) {
+  .description {
+    font-size: calc(5px + 3vw);
+  }
+}
+
+.mail-link {
   color: orange;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.form-modal{
+.form-modal {
   width: 0;
   height: 0;
   border-radius: 100%;
@@ -157,7 +167,7 @@ form{
 
 .modal-active {
   z-index: 2;
-  animation: open-form-modal 2000ms cubic-bezier(0.3, 0.3, 0.4, 1) 50ms forwards;
+  animation: open-form-modal 1600ms cubic-bezier(0.3, 0.3, 0.4, 1) 50ms forwards;
 }
 
 .form {
@@ -169,10 +179,10 @@ form{
 
 .form-active {
   z-index: 2;
-  animation: open-form 2000ms cubic-bezier(0.3, 0.3, 0.4, 1) 50ms forwards;
+  animation: open-form 1600ms cubic-bezier(0.3, 0.3, 0.4, 1) 50ms forwards;
 }
 
-.main, .bgImage, .form, .form-modal, .cp_iptxt button{
+.main, .bgImage, .form, .form-modal, .cp_iptxt button {
   position: absolute;
   top: 0;
   left: 0;
@@ -187,19 +197,19 @@ form{
   right: 10px;
 }
 
-.twitter, .github {
+.about, .skills, .portfolio, .twitter, .github {
   display: inline-block;
-  width: 50%;
+  width: 20%;
 }
 
 .twitter_id {
   left: -70px;
-  border: #1da1f2c4 1.5px solid;
+  border: rgba(29, 161, 242, 0.76) 1.5px solid;
 }
 
 .github_id {
   right: 0;
-  border: #000000c4 1.5px solid;
+  border: rgba(0, 0, 0, 0.76) 1.5px solid;
 }
 
 .twitter_id, .github_id {
@@ -214,20 +224,57 @@ form{
   color: #FFF;
 }
 
-.svg-inline--fa.fa-w-16{
+.svg-inline--fa.fa-w-16 {
   width: inherit;
 }
 
-.sns .twitter svg {
+.sns .about svg {
   color: #FFF;
-  background-color: #1da0f2c4;
+  background-color: rgba(242, 29, 29, 0.76);
   border-radius: 50%;
   margin-right: 10px;
   width: 30px;
   height: 30px;
   padding: 10px;
   opacity: 0;
-  animation: swingdown 1800ms 1000ms forwards;
+  animation: swingdown 1800ms 700ms forwards;
+}
+
+.sns .skills svg {
+  color: #FFF;
+  background-color: rgba(242, 114, 29, 0.76);
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  opacity: 0;
+  animation: swingdown 1800ms 900ms forwards;
+}
+
+.sns .portfolio svg {
+  color: #FFF;
+  background-color: rgba(245, 241, 20, 0.9);
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  opacity: 0;
+  animation: swingdown 1800ms 1100ms forwards;
+}
+
+
+.sns .twitter svg {
+  color: #FFF;
+  background-color: rgba(29, 161, 242, 0.76);
+  border-radius: 50%;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  opacity: 0;
+  animation: swingdown 1800ms 1300ms forwards;
 }
 
 .sns .twitter a:hover + .twitter_id {
@@ -238,12 +285,12 @@ form{
 .sns .github svg {
   width: 50px;
   height: 50px;
-  color: #000000c4;
+  color: rgba(0, 0, 0, 0.76);
   background-color: #FFF;
   border-radius: 50%;
-  border: #000000c4 1px solid;
+  border: rgba(0, 0, 0, 0.76) 1px solid;
   opacity: 0;
-  animation: swingdown 1800ms 1300ms forwards;
+  animation: swingdown 1800ms 1500ms forwards;
 }
 
 .sns .github a:hover + .github_id {
@@ -252,7 +299,7 @@ form{
 }
 
 
-.tic-tac-toe{
+.tic-tac-toe {
   display: none;
   position: absolute;
   bottom: 10px;
@@ -310,7 +357,7 @@ form{
 	margin: 40px 5%;
 }
 
-.cp_body, .cp_body textarea{
+.cp_body, .cp_body textarea {
   height: 120px !important;
 }
 
@@ -407,21 +454,21 @@ form{
   transition: 2s;
 }
 
-.cp_iptxt button{
+.cp_iptxt button {
   left: calc(50% - 20px);
   right: calc(50% - 20px);
 }
 
-.ef_body{
+.ef_body {
   height: 120px;
 }
 
-.cp_btn{
+.cp_btn {
   position: absolute;
   bottom: 0;
 }
 
-button{
+button {
   border-radius: 50%;
   transition: 2s;
 }
@@ -444,16 +491,14 @@ button:hover i {
   height: 100%;
 }
 
-.form-alert{
+.form-alert {
   display: none;
 }
-
 
 @keyframes appearance {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
 
 @keyframes open-form-modal {
   0% {

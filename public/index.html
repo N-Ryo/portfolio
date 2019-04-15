@@ -21,43 +21,41 @@
     <div id="main"></div>
     <div id="root" class="tic-tac-toe"></div>
     <div id="sns"></div>
-    <div class="form-modal">
-      <div class="form" id="form">
-        <form>
-          <div class="appear-form cp_iptxt">
-            <input  class="ef" id="name" type="text" name="name" required>
-            <label for="name">Name</label>
-            <span class="focus_line"><i></i></span>
-          </div>
-          <div class="appear-form cp_iptxt">
-            <input class="ef" id="email" type="text" name="email" required>
-            <label for="email">E-mail</label>
-            <span class="focus_line"><i></i></span>
-          </div>
-          <div class="appear-form cp_iptxt">
-            <input class="ef" id="title" type="text" name="title" required>
-            <label for="title">Title</label>
-            <span class="focus_line"><i></i></span>
-          </div>
-          <div class="appear-form cp_iptxt cp_body">
-            <textarea class="ef" id="body" type="text" name="body" required></textarea>
-            <label for="body">Body</label>
-            <span class="focus_line"><i></i></span>
-          </div>
-          <div class="cp_iptxt cp_btn">
-            <button type="submit" name="button"><i class="fas fa-envelope"></i></button>
-          </div>
-        </form>
-        <div class="wrapper">
-          <!-- 送信が成功したときに表示するテキスト -->
-          <div class="form-alert" id="success">
-            <h2>Thank you for contact! Please wait for my reaction.</h2>
-          </div>
-
-          <!-- 送信が失敗したときに表示するテキスト -->
-          <div class="form-alert" id="error">
-            <h2>Error! Reload, and retry to fill form.</h2>
-          </div>
+    <div class="form-modal"></div>
+    <div class="form" id="form">
+      <form>
+        <div class="appear-form cp_iptxt">
+          <input  class="ef" id="name" type="text" name="name" required>
+          <label for="name">Name</label>
+          <span class="focus_line"><i></i></span>
+        </div>
+        <div class="appear-form cp_iptxt">
+          <input class="ef" id="email" type="text" name="email" required>
+          <label for="email">E-mail</label>
+          <span class="focus_line"><i></i></span>
+        </div>
+        <div class="appear-form cp_iptxt">
+          <input class="ef" id="title" type="text" name="title" required>
+          <label for="title">Title</label>
+          <span class="focus_line"><i></i></span>
+        </div>
+        <div class="appear-form cp_iptxt cp_body">
+          <textarea class="ef" id="body" type="text" name="body" required></textarea>
+          <label for="body">Body</label>
+          <span class="focus_line"><i></i></span>
+        </div>
+        <div class="cp_iptxt cp_btn">
+          <button type="submit" name="button"><i class="fas fa-envelope"></i></button>
+        </div>
+      </form>
+      <div class="wrapper">
+        <!-- 送信が成功したときに表示するテキスト -->
+        <div class="form-alert" id="success">
+          <h2>Thank you for contact! Please wait for my reaction.</h2>
+        </div>
+        <!-- 送信が失敗したときに表示するテキスト -->
+        <div class="form-alert" id="error">
+          <h2>Error! Reload, and retry to fill form.</h2>
         </div>
       </div>
     </div>

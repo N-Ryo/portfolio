@@ -8,31 +8,35 @@ import myPicture from './images/my-pic.jpg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab)
+library.add(fab, fas)
 
 class Frame extends React.Component {
   render() {
     const style = {backgroundImage:`url(${topImage})`};
     return (
       <div className="portfolio">
-        <div className="main">
-          <h1>Portfolio</h1>
-          <div className="profile">
-            <div className="pic-wapper">
-              <img className="my-pic" src={myPicture} alt="Ryo Nishimura"/>
+        <ul className="menu">
+          <li>
+            <div className="main">
+              <h1>Portfolio</h1>
+              <div className="profile">
+                <div className="pic-wapper">
+                  <img className="my-pic" src={myPicture} alt="Ryo Nishimura"/>
+                </div>
+                <p className="description">Thank you for visiting my portfolio. My name is Ryo Nishimura, and I live in Tokyo. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <span className="mail-link">here</span>.</p>
+              </div>
             </div>
-            <p className="description">Thank you for visiting my portfolio. My name is Ryo Nishimura, and I live in Tokyo. I am Back-End engineer. I guraduated from Tohoku Univ. I love to create WEB services, which are fully responsive, mobile-first layouts and MVC applications. If you want more information or to ask any job, please contact me from <span className="mail-link">here</span>.</p>
-          </div>
-          <div className="menu">
-            <div></div>
-            <ol>
-              <li>about</li>
-              <li>skills</li>
-              <li>works</li>
-            </ol>
-          </div>
-        </div>
+          </li>
+          <li>skills</li>
+          <li>portfolio</li>
+        </ul>
+        <ul className="icons">
+          <li><FontAwesomeIcon icon={['fas', 'home']} /></li>
+          <li><FontAwesomeIcon icon={['fas', 'laptop-code']} /></li>
+          <li><FontAwesomeIcon icon={['fas', 'trophy']} /></li>
+        </ul>
         <div className="bgImage" style={style}></div>
       </div>
     );
@@ -48,14 +52,17 @@ class Sns extends React.Component {
   render() {
     return (
       <div className="sns">
+        <div className="about"><FontAwesomeIcon icon={['fas', 'home']} /></div>
+        <div className="skills"><FontAwesomeIcon icon={['fas', 'laptop-code']} /></div>
+        <div className="portfolio"><FontAwesomeIcon icon={['fas', 'trophy']} /></div>
         <div className="twitter">
-          <a href="https://twitter.com/_Ryo_Nishimura" target="_blank">
+          <a href="https://twitter.com/_Ryo_Nishimura" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fab', 'twitter']} />
           </a>
           <span className="twitter_id">@_Ryo_Nishimura</span>
         </div>
         <div className="github">
-          <a href="https://github.com/N-Ryo" target="_blank">
+          <a href="https://github.com/N-Ryo" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={['fab', 'github']} />
           </a>
           <span className="github_id">@N-Ryo</span>
