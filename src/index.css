@@ -30,16 +30,14 @@ ol, ul {
   padding-left: 30px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 46px;
-  margin: 0;
-}
-
 h2 {
   text-align: center;
   margin: 0;
   vertical-align: middle;
+}
+
+h3 {
+  margin-bottom: 10px;
 }
 
 a {
@@ -57,6 +55,40 @@ form {
   list-style: none;
 }
 
+.title {
+  text-align: center;
+  font-size: 46px;
+  margin: 0;
+  display: none;
+  opacity: 0;
+}
+
+.title-active {
+  display: block;
+  animation: frameIn 1500ms forwards;
+}
+
+.title-passive {
+  display: block;
+  animation: frameOut 500ms forwards;
+}
+
+.content {
+  background-color: rgba(30, 30, 30, .6);
+  padding: 1vw;
+  display: none;
+}
+
+.content-active {
+  display: block;
+  animation: frameIn 1500ms forwards;
+}
+
+.content-passive {
+  display: block;
+  animation: frameOut 500ms forwards;
+}
+
 .appear-form {
   opacity: 0;
 }
@@ -65,15 +97,20 @@ form {
   animation: appearance 1000ms ease 800ms forwards;
 }
 
-.main {
+.about-main, .works-main {
   color: #FFF;
   width: 80%;
   height: 90%;
 }
 
-.profile {
-  background-color: rgba(30, 30, 30, .6);
-  padding: 1vw;
+.skills-main {
+  color: #FFF;
+  width: 70%;
+  height: 90%;
+}
+
+.main-active {
+  z-index: 100;
 }
 
 .gameTitle {
@@ -115,6 +152,7 @@ form {
     width: calc(50% - 18px);
     max-width: 300px;
     margin: 18px 18px 18px 0;
+    display: inline-block;
   }
 
   .pic-wapper:before {
@@ -136,6 +174,9 @@ form {
 
   .description {
     width: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 50px;
   }
 
   .tic-tac-toe {
@@ -182,7 +223,7 @@ form {
   animation: open-form 1600ms cubic-bezier(0.3, 0.3, 0.4, 1) 50ms forwards;
 }
 
-.main, .bgImage, .form, .form-modal, .cp_iptxt button {
+.about-main, .skills-main, .works-main, .bgImage, .form, .form-modal, .cp_iptxt button {
   position: absolute;
   top: 0;
   left: 0;
@@ -195,11 +236,20 @@ form {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  z-index: 500;
 }
 
-.about, .skills, .portfolio, .twitter, .github {
+.about, .skills, .works, .twitter, .github {
   display: inline-block;
-  width: 20%;
+  width: 25%;
+}
+
+.icon-active {
+  display: none;
+}
+
+.icon-passive {
+  display: inline-block;
 }
 
 .twitter_id {
@@ -240,6 +290,11 @@ form {
   animation: swingdown 1800ms 700ms forwards;
 }
 
+.sns .about a:hover + .about_name {
+  display: inline-block;
+  animation: swingdown 1300ms forwards;
+}
+
 .sns .skills svg {
   color: #FFF;
   background-color: rgba(242, 114, 29, 0.76);
@@ -252,7 +307,12 @@ form {
   animation: swingdown 1800ms 900ms forwards;
 }
 
-.sns .portfolio svg {
+.sns .skills a:hover + .skills_name {
+  display: inline-block;
+  animation: swingdown 1300ms forwards;
+}
+
+.sns .works svg {
   color: #FFF;
   background-color: rgba(245, 241, 20, 0.9);
   border-radius: 50%;
@@ -264,6 +324,10 @@ form {
   animation: swingdown 1800ms 1100ms forwards;
 }
 
+.sns .works a:hover + .works_name {
+  display: inline-block;
+  animation: swingdown 1300ms forwards;
+}
 
 .sns .twitter svg {
   color: #FFF;
@@ -298,6 +362,70 @@ form {
   animation: swingdown 1300ms forwards;
 }
 
+.skill-icons {
+  padding-left: 15px;
+}
+
+.skill-icon, #skills-content svg {
+  padding-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.skills-content {
+  display: inline-block;
+  text-align: center;
+}
+
+.skill-content {
+  padding: 5px;
+  width: calc(50% - 10px);
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.html-icon {
+  color: rgb(208, 99, 48);
+}
+
+.css-icon {
+  color: rgb(29, 167, 231);
+}
+
+.js-icon {
+  color: rgb(255, 233, 106);
+}
+
+.sass-icon {
+  color: rgb(172, 121, 253);
+}
+
+.bootstrap-icon {
+  color: rgb(126, 70, 156);
+}
+
+.sqlite-icon {
+  color: rgb(80, 200, 255);
+}
+
+.slack-icon {
+  color: rgb(42, 255, 60);
+}
+
+.github-icon{
+  color: rgba(5, 5, 5, 0.8);
+}
+
+.work-site-title{
+  padding-left: 10px;
+}
+
+.work-site {
+  margin: 0 auto;
+  display: block;
+}
 
 .tic-tac-toe {
   display: none;
@@ -553,6 +681,41 @@ button:hover i {
   100% {
     opacity: 1;
     transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes frameIn {
+  0% {
+    opacity: .1;
+    transform: rotate(-90deg) translateX(200px) translateY(-50px); 
+  }
+
+  30% {
+    transform: rotateX(-30deg) rotateY(20deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  65% {
+    transform: rotateX(30deg) rotateY(-3deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes frameOut {
+  0% { 
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(90deg) translateX(-200px) translateY(-50px);
     animation-timing-function: ease-in-out;
   }
 }
