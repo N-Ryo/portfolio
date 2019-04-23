@@ -16,8 +16,8 @@
 }
 
 html {
-  height: 100%;
-  width: 100vh;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -424,6 +424,7 @@ form {
 
 .work-site {
   margin: 0 auto;
+  width: 90%;
   display: block;
 }
 

@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    // スクロール禁止
+    $(window).on('touchmove.noScroll', e => {
+        e.preventDefault();
+    });
+
+    // スクロール禁止 解除
+    $(window).off('.noScroll');
+    
     $("#form").submit(function (event) {
         var name = $("#name").val();
         var email = $("#email").val();
